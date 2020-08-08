@@ -22,5 +22,6 @@ namespace eCommerceProject
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
     }
 }

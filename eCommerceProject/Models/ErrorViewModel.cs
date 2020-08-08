@@ -1,5 +1,3 @@
-using System;
-
 namespace eCommerceProject.Models
 {
     public class ErrorViewModel
