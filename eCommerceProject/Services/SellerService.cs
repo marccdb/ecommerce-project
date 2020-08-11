@@ -22,6 +22,7 @@ namespace eCommerceProject.Services
             return _context.Seller.ToList();
         }
 
+<<<<<<< HEAD
         public void Insert(Seller seller)
         {
             _context.Add(seller);
@@ -29,5 +30,7 @@ namespace eCommerceProject.Services
         }
 
 
+=======
+>>>>>>> ef6a2e3c638722160e7e3472117c9c1cfad690db
     }
 }

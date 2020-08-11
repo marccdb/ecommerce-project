@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+<<<<<<< HEAD
 using eCommerceProject.Models;
+=======
+>>>>>>> ef6a2e3c638722160e7e3472117c9c1cfad690db
 using eCommerceProject.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,6 +25,7 @@ namespace eCommerceProject.Controllers
             var list = _sellerService.FindAll();
             return View(list);
         }
+<<<<<<< HEAD
 
         public IActionResult Create()
         {
@@ -36,5 +40,7 @@ namespace eCommerceProject.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+=======
+>>>>>>> ef6a2e3c638722160e7e3472117c9c1cfad690db
     }
 }
