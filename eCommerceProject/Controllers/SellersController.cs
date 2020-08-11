@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-<<<<<<< HEAD
-using eCommerceProject.Models;
-=======
->>>>>>> ef6a2e3c638722160e7e3472117c9c1cfad690db
+﻿using eCommerceProject.Models;
 using eCommerceProject.Services;
 using Microsoft.AspNetCore.Mvc;
+using eCommerceProject.Models.ViewModels;
 
 namespace eCommerceProject.Controllers
 {
     public class SellersController : Controller
     {
         private readonly SellerService _sellerService;
+        private readonly DepartmentService _departmentService;
 
-        public SellersController(SellerService sellerService)
+        public SellersController(SellerService sellerService, DepartmentService departmentService)
         {
             _sellerService = sellerService;
+            _departmentService = departmentService;
         }
 
         public IActionResult Index()
@@ -25,11 +21,12 @@ namespace eCommerceProject.Controllers
             var list = _sellerService.FindAll();
             return View(list);
         }
-<<<<<<< HEAD
 
         public IActionResult Create()
         {
-            return View();
+            var departments = _departmentService.FindAll();
+            var viewModel = new SellerFormViewModel { Departments = departments };
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -39,8 +36,5 @@ namespace eCommerceProject.Controllers
             _sellerService.Insert(seller);
             return RedirectToAction(nameof(Index));
         }
-
-=======
->>>>>>> ef6a2e3c638722160e7e3472117c9c1cfad690db
     }
 }
