@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using eCommerceProject.Data;
+using eCommerceProject.Services;
 
 namespace eCommerceProject
 {
@@ -30,14 +31,18 @@ namespace eCommerceProject
             services.AddDbContext<eCommerceProjectContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("eCommerceProjectContext"), builder =>
                     builder.MigrationsAssembly("eCommerceProject")));
+
+            services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, SeedingService seedingService)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                seedingService.Seed();
             }
             else
             {
