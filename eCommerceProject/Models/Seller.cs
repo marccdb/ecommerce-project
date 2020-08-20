@@ -6,7 +6,7 @@ namespace eCommerceProject.Models
 {
     public class Seller
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public DateTime BirthDate { get; set; }
@@ -17,9 +17,8 @@ namespace eCommerceProject.Models
 
         public Seller() { }
 
-        public Seller(int iD, string name, string email, DateTime birthDate, double baseSalary, Department department)
+        public Seller(string name, string email, DateTime birthDate, double baseSalary, Department department)
         {
-            ID = iD;
             Name = name;
             Email = email;
             BirthDate = birthDate;

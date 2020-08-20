@@ -9,8 +9,7 @@ namespace eCommerceProject.Data
 {
     public class eCommerceProjectContext : DbContext
     {
-        public eCommerceProjectContext (DbContextOptions<eCommerceProjectContext> options)
-            : base(options)
+        public eCommerceProjectContext (DbContextOptions<eCommerceProjectContext> options) : base(options)
         {
         }
 

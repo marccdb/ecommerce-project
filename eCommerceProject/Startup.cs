@@ -29,7 +29,7 @@ namespace eCommerceProject
             services.AddControllersWithViews();
 
             services.AddDbContext<eCommerceProjectContext>(options =>
-                    options.UseMySql(Configuration.GetConnectionString("eCommerceProjectContext"), builder =>
+                    options.UseSqlServer(Configuration.GetConnectionString("eCommerceProjectContext"), builder =>
                     builder.MigrationsAssembly("eCommerceProject")));
 
             services.AddScoped<SeedingService>();
